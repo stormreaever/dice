@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Dice!</title>
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
+  </head>
+  <body ng-app="roll" ng-controller="rollController">
+
+    <div class="dice-row">
+
+      <button ng-Click="diceBtn('1d4')" class="d4"><img src="assets/img/d4.svg" /><span>d4</span></button>
+      <button ng-Click="diceBtn('1d6')" class="d6"><img src="assets/img/d6.svg" /><span>d6</span></button>
+      <button ng-Click="diceBtn('1d8')" class="d8"><img src="assets/img/d8.svg" /><span>d8</span></button>
+      <button ng-Click="diceBtn('1d20')" class="d20"><img src="assets/img/d20.svg" /><span>d20</span></button>
+      <button ng-Click="diceBtn('1d10')" class="d10"><img src="assets/img/d10.svg" /><span>d10</span></button>
+      <button ng-Click="diceBtn('1d100')" class="d100"><img src="assets/img/d100.svg" /><span>d100</span></button>
+      <button ng-Click="diceBtn('1d12')" class="d12"><img src="assets/img/d12.svg" /><span>d12</span></button>
+
+    </div>
+
+    <div class="text-bar" ng-class="{'contracted': cards.length > 0}">
+      <input type="text" ng-model="roll" placeholder="1d20" ng-keypress="rollKeyPress($event)">
+      <button ng-click="rollDice()">Roll</button>
+    </div>
+
+    <div class="cards">
+      <div class="card" ng-repeat="card in cards | orderBy:null:true">
+        <div class="total"><span>{{card.total}}</span></div>
+        <div class="breakdown">
+          <p>Rolled <strong>{{card.roll}}</strong></p>
+          <p>= {{card.rendered}}</p>
+          <p>= {{card.total}}</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Made by Kat EV
+    </footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/4.0.1/math.min.js"></script>
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/scripts.min.js"></script>
+  </body>
+</html>
