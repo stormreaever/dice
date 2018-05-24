@@ -15,8 +15,6 @@ angular.module('roll', ['ngAnimate'])
 
     var result = new DiceRoll(roll);
 
-    console.log(result.expression);
-
     $scope.cards.push({
       "total": result.expression.result,
       "rendered": result.expression.toDetails(),
@@ -25,10 +23,12 @@ angular.module('roll', ['ngAnimate'])
 
   };
 
+
   $scope.diceBtn = function(roll) {
     $scope.roll = roll;
     $scope.rollDice();
   };
+  
 
   // roll dice on enter key in main input
   $scope.rollKeyPress = function(e) {
