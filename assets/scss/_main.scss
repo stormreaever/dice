@@ -1,0 +1,102 @@
+
+main, .main {
+  line-height: 1.5;
+  padding: 0 1rem;
+
+  a {
+    color: $red;
+    font-weight: 400;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+}
+
+tt, code, kbd, samp {
+  font-family: $mono;
+  background: #EFEFEF;
+  border-radius: 2px;
+  font-size: .8em;
+  padding: 3px 5px;
+  white-space: pre-wrap;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: $red;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.125;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+p,ul,ol {
+  margin: 0.75em 0;
+}
+
+h1 + p {
+  margin-bottom: 0;
+}
+
+h2 + p {
+  margin-bottom: 2rem;
+}
+
+section {
+  max-width: 640px;
+  margin: 4rem auto;
+}
+
+.header {
+
+  max-width: 480px;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+
+  h1 {
+    text-align: center;
+  }
+
+  &::after {
+
+    margin-top: 4rem;
+
+    display: block;
+    position: absolute;
+    left: 0;
+    content: '';
+    height: 40px;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0));
+  }
+
+  .back-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0.75rem;
+  }
+
+}
+
+footer.main p {
+  margin: 0.75rem 0;
+}

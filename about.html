@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>About Dice!</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="assets/css/styles.min.css" type="text/css">
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/dice/assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/dice/assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/dice/assets/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/dice/assets/img/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/dice/assets/img/favicons/safari-pinned-tab.svg" color="#b72121">
+    <link rel="shortcut icon" href="/dice/assets/img/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#b72121">
+    <meta name="msapplication-TileImage" content="/dice/assets/img/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="/dice/assets/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Facebook Open Graph -->
+    <meta property="og:image" content="https://stormreaever.github.io/dice/assets/img/social/image-1200x630.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="628">
+    <meta property="og:title" content="About Dice!">
+    <meta property="og:description" content="Roll RPG dice! Roll the 7 standard polyhedral dice or use dice expressions to roll anything you want.">
+    <meta property="og:url" content="https://stormreaever.github.io/dice/">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kathrynhartog">
+    <meta name="twitter:title" content="Dice!">
+    <meta name="twitter:description" content="Roll RPG dice! Roll the 7 standard polyhedral dice or use dice expressions to roll anything you want.">
+    <meta name="twitter:image" content="https://stormreaever.github.io/dice/assets/img/social/image-1200x630.png">
+    <meta name="twitter:image:alt" content="Illustratino of seven red polyhedral dice: the kind that are used in role-playing games.">
+
+  </head>
+  <body>
+
+    <main>
+
+      <section class="header">
+
+        <div class="dice-row">
+
+          <button ng-Click="diceBtn('1d4')" class="d4"><img src="assets/img/d4.svg" /><span>d4</span></button>
+          <button ng-Click="diceBtn('1d6')" class="d6"><img src="assets/img/d6.svg" /><span>d6</span></button>
+          <button ng-Click="diceBtn('1d8')" class="d8"><img src="assets/img/d8.svg" /><span>d8</span></button>
+          <button ng-Click="diceBtn('1d20')" class="d20"><img src="assets/img/d20.svg" /><span>d20</span></button>
+          <button ng-Click="diceBtn('1d10')" class="d10"><img src="assets/img/d10.svg" /><span>d10</span></button>
+          <button ng-Click="diceBtn('1d100')" class="d100"><img src="assets/img/d100.svg" /><span>d100</span></button>
+          <button ng-Click="diceBtn('1d12')" class="d12"><img src="assets/img/d12.svg" /><span>d12</span></button>
+
+        </div>
+
+        <h1>Dice!</h1>
+
+        <p>This is a web app for rolling dice! Roll the 7 standard polyhedral dice or use standard dice expressions to roll anything you want. </p>
+
+        <p class="back-link"><a href="/dice"><i class="material-icons">keyboard_arrow_left </i>Back to Dice!</a></p>
+
+      </section>
+
+      <section>
+
+        <h2>Dice Expressions</h2>
+
+        <p>This app uses the <a href="https://github.com/bsredbeard/rolldice">rolldice</a> library. Here are some of the cool dice expressions supported by the library.</p>
+
+        <h3><code>1d20</code></h3>
+
+        <p>A normal, boring roll. </p>
+
+        <p>Roll one 20-sided die and give the result.</p>
+
+        <h3><code>3d6+1d4-2</code></h3>
+
+        <p>More dice! And operators! </p>
+
+        <p>Roll three six-sided dice and one four-sided die, and add all the numbers together. Then subtract 2 from the result. </p>
+
+        <p>You can use all the following operators in your expression: </p>
+
+        <ul>
+        <li><code>+</code> add</li>
+        <li><code>-</code> subtract</li>
+        <li><code>*</code> multiply</li>
+        <li><code>/</code> divide</li>
+        <li><code>%</code> modulo</li>
+        <li><code>( )</code> parenthesis for order of operations</li>
+        </ul>
+
+        <h3><code>4d6d1</code> &amp; <code>4d6k3</code></h3>
+
+        <p>Roll some D&amp;D stats! </p>
+
+        <p>Use <code>k</code> or <code>d</code> to keep or drop dice in the roll.</p>
+
+        <p>Roll four six-sided dice and drop the lowest one. Or, roll four six-sided dice and keep the highest 3. </p>
+
+        <h3><code>2d20kl1</code> &amp; <code>2d20dh1</code></h3>
+
+        <p>Rolling with disadvantage? </p>
+
+        <p><code>kl</code> keeps the lowest roll and <code>dh</code> drops the highest roll. Like <code>k</code> and <code>d</code> above, you can specify the number of dice to keep or drop.</p>
+
+        <h3><code>1d20r&lt;3</code></h3>
+
+        <p>Re-roll based on certain rules. </p>
+
+        <p>Roll one 20-sided die. Reroll if the result is less than 3. </p>
+
+        <p>You can use the following operators:</p>
+
+        <ul>
+        <li><code>rx</code> re-roll if equal to <code>x</code></li>
+        <li><code>r&lt;x</code> re-roll if less than <code>x</code></li>
+        <li><code>r&lt;=x</code> re-roll if less than or equal to <code>x</code></li>
+        <li><code>r&gt;x</code> re-roll if greater than <code>x</code></li>
+        <li><code>r&gt;=x</code> re-roll if greater than or equal to <code>x</code></li>
+        </ul>
+
+        <h2>About the Project</h2>
+
+        <p>This project was created by Kathryn Hartog. </p>
+
+        <p>You can find me <a href="https://twitter.com/kathrynhartog">on Twitter</a></p>
+
+        <p>The project is <a href="https://github.com/stormreaever/dice">on GitHub</a> and hosted by GitHub Pages. </p>
+
+
+      </section>
+
+    </main>
+
+    <footer class="main">
+      <p><a href="/dice"><i class="material-icons">keyboard_arrow_left </i>Back to Dice!</a></p>
+    </footer>
+
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/4.0.1/math.min.js"></script> -->
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/scripts.min.js"></script>
+  </body>
+</html>
