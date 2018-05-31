@@ -1,0 +1,14 @@
+// animate cards in (after js loads)
+.cards {
+  opacity: 0;
+  animation: fade .25s ease-in 2s forwards;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

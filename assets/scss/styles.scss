@@ -9,6 +9,10 @@ $lightgrey: #DEDEDE;
 $sanserif: "roboto", sans-serif;
 $mono: "roboto mono", monospace;
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
 
 
 body {
@@ -29,3 +33,4 @@ body {
 
 @import 'main';
 @import 'app';
+@import 'loading';
